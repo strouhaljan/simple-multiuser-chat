@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./src/main.js",
+  entry: "./src/index.js",
   output: {
     filename: "bundle.js"
   },
@@ -11,9 +11,13 @@ module.exports = {
         loader: 'babel-loader',
         query: {
             presets: ['react', 'es2015'],
-            plugins: ["transform-class-properties"]
+            plugins: [
+              "transform-class-properties",
+              "transform-object-rest-spread"
+            ]
         }
       }
     ]
-  }
+  },
+  devtool: 'source-map'
 };
